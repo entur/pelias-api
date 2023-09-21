@@ -59,7 +59,8 @@ const DETAILS_PROPS = [
   { name: 'label',             type: 'string' },
   { name: 'category',          type: 'array'}, //,     condition: checkCategoryParam } Entur: Always return categories
   { name: 'tariff_zones',      type: 'array'}, // Entur: Custom type tariff_zones
-  { name: 'description',      type: 'array'} // Entur: Custom type description
+  { name: 'fare_zones',        type: 'array'}, // Entur: Custom type fare_zones
+  { name: 'description',       type: 'array'} // Entur: Custom type description
 ];
 
 // returns true IFF source a country_gid property

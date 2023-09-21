@@ -10,12 +10,11 @@ const Debug = require('../helper/debug');
 const filterByParentIds = require('./filters/filter_by_parent_ids');
 const filterByTariffZones = require('./filters/filter_by_tariff_zones');
 const filterByCategories = require('./filters/filter_by_categories');
+const filterByFareZones = require('./filters/filter_by_fare_zones');
 
 function isRequestTimeout(err) {
   return _.get(err, 'status') === 408;
 }
-
-
 
 function setup( apiConfig, esclient, query, should_execute ){
   function controller( req, res, next ){
@@ -37,19 +36,22 @@ function setup( apiConfig, esclient, query, should_execute ){
     const renderedQuery = query(req.clean);
 
     // ENTUR: Filter results based on county / locality in input params
-     filterByParentIds(req, renderedQuery);
+    filterByParentIds(req, renderedQuery);
 
-     // ENTUR: Filter results based on tariff zones in input params
-     filterByTariffZones(req, renderedQuery);
+    // ENTUR: Filter results based on tariff zones in input params
+    filterByTariffZones(req, renderedQuery);
 
-     // ENTUR: Filter results based on tariff zones in input params
-     filterByCategories(req, renderedQuery);
+    // ENTUR: Filter results based on fare zones in input params
+    filterByFareZones(req, renderedQuery);
 
-     //  ENTUR: Be sure to fetch more results than user has requested to allow for deduping.
-      // TODO dirty, move to autocomplete specific context
-     if (req.path && req.path.includes('autocomplete')) {
-          renderedQuery.body.size = req.clean.querySize;
-     }
+    // ENTUR: Filter results based on categories in input params
+    filterByCategories(req, renderedQuery);
+
+    //  ENTUR: Be sure to fetch more results than user has requested to allow for deduping.
+    // TODO dirty, move to autocomplete specific context
+    if (req.path && req.path.includes('autocomplete')) {
+        renderedQuery.body.size = req.clean.querySize;
+    }
 
     // if there's no query to call ES with, skip the service
     if (_.isUndefined(renderedQuery)) {

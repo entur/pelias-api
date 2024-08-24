@@ -72,7 +72,7 @@
     "difflet": "1.0.1",
     "istanbul": "0.4.5",
     "jshint": "2.13.6",
-    "nsp": "2.8.1",
+    "nsp": "3.2.1",
     "pelias-mock-logger": "1.7.0",
     "precommit-hook": "3.0.0",
     "proxyquire": "1.8.0",

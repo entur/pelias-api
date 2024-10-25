@@ -76,7 +76,7 @@
     "pelias-mock-logger": "1.7.0",
     "precommit-hook": "3.0.0",
     "proxyquire": "1.8.0",
-    "semantic-release": "8.2.3",
+    "semantic-release": "24.2.0",
     "source-map": "0.7.4",
     "tap-dot": "1.0.5",
     "tape": "4.17.0",

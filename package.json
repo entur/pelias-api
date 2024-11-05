@@ -65,7 +65,7 @@
     "predicates": "2.0.3",
     "retry": "0.13.1",
     "stats-lite": "2.2.0",
-    "through2": "2.0.5"
+    "through2": "4.0.2"
   },
   "devDependencies": {
     "ciao": "1.0.0",

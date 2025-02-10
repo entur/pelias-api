@@ -19,7 +19,7 @@ image:
   identifier: <+artifacts.primary.image>
   imagePullPolicy: Always
 secondaryImage:
-  identifier: eu.gcr.io/entur-system-1287/es-static:master-v26-8908900a
+  identifier: eu.gcr.io/entur-system-1287/es-static:master.20250210-SHAb336c8a
   imagePullPolicy: Always
   containerPort: 9200
   resources:

@@ -35,6 +35,7 @@ nibiruImage:
     memLimit: 750Mi
     cpuRequest: 650m
     memRequest: 500Mi
+    xmx: 1500m
 
 service:
   http:

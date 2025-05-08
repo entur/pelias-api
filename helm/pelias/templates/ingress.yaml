@@ -7,11 +7,33 @@ metadata:
     {{- include "common.labels" . | indent 4 }}
   annotations:
     kubernetes.io/ingress.class: traefik
-  name: geocoder-v1
+  name: geocoder-v1-gcp2-v2
   namespace: {{ .Release.Namespace }}
 spec:
   rules:
-    - host: geocoder-v1{{ .Values.ingress.domainName }}
+    - host: geocoder-v1-gcp2-v2{{ .Values.ingress.domainName }}
+      http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name:  {{ template "app.name" . }}-v2
+                port:
+                  number:  {{ .Values.service.http.externalPort }}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    traffic-type: api
+    {{- include "common.labels" . | indent 4 }}
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  name: geocoder-v1-gcp2
+  namespace: {{ .Release.Namespace }}
+spec:
+  rules:
+    - host: geocoder-v1-gcp2{{ .Values.ingress.domainName }}
       http:
         paths:
           - pathType: ImplementationSpecific

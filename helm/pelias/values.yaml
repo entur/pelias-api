@@ -40,7 +40,8 @@ nibiruImage:
 service:
   http:
     externalPort: 80
-    internalPort: 4000
+    internalPort: 3000
+    internalPortNibiru: 4000
 
 horizontalPodAutoscaler:
   maxReplicas: 2

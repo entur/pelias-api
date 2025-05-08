@@ -21,7 +21,7 @@ kind: Service
 metadata:
   labels:
     {{- include "common.labels" . | indent 4 }}
-  name: {{ template "app.name" . }}
+  name: {{ template "app.name" . }}-v2
   namespace: {{ .Release.Namespace }}
 spec:
   ports:

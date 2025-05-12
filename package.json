@@ -40,7 +40,7 @@
     "@mapbox/geojson-extent": "0.4.0",
     "addressit": "1.8.2",
     "async": "3.2.6",
-    "check-types": "7.4.0",
+    "check-types": "11.2.3",
     "elasticsearch": "16.7.3",
     "elasticsearch-exceptions": "0.0.4",
     "express": "5.1.0",

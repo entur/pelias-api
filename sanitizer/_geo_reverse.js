@@ -14,7 +14,7 @@ function _sanitize( raw, clean ){
 
   // helper function to determine if raw has a boundary.circle property
   var hasBoundaryCircleField = function(field) {
-    return raw.hasOwnProperty('boundary.circle.' + field);
+    return Object.assign({}, raw).hasOwnProperty('boundary.circle.' + field);
   };
 
   if (['lat', 'lon'].some(hasBoundaryCircleField)) {

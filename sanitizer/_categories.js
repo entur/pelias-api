@@ -15,7 +15,7 @@ function _sanitize( raw, clean, categories ) {
   var messages = {errors: [], warnings: []};
 
   // it's not a required parameter, so if it's not provided just move on
-  if (!raw.hasOwnProperty('categories')) {
+  if (!Object.assign({}, raw).hasOwnProperty('categories')) {
     return messages;
   }
 

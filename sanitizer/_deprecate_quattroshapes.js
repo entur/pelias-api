@@ -15,7 +15,7 @@ function _sanitize( raw, clean, opts ) {
   var messages = { errors: [], warnings: [] };
 
   // only applicably when 'sources' param is privided
-  if( raw.hasOwnProperty('sources') ){
+  if( Object.assign({}, raw).hasOwnProperty('sources') ){
 
     var sources = raw.sources.split(',');
     if (_.includes(sources, 'quattroshapes') || _.includes(sources, 'qs')) {

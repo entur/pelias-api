@@ -79,7 +79,7 @@
     "semantic-release": "24.2.3",
     "source-map": "0.7.4",
     "tap-dot": "2.0.0",
-    "tape": "4.17.0",
+    "tape": "5.9.0",
     "tmp": "0.2.3",
     "uglify-js": "3.19.3"
   },

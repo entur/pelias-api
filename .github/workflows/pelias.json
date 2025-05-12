@@ -1,5 +1,6 @@
 {
   "esclient": {
+    "apiVersion": "2.4",
     "keepAlive": true,
     "maxRetries": "3",
     "deadTimeout": "3000",

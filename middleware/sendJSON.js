@@ -1,7 +1,7 @@
 var check = require('check-types'),
     es = require('elasticsearch'),
     logger = require( 'pelias-logger' ).get( 'api' ),
-    exceptions = require('elasticsearch-exceptions/lib/exceptions/SupportedExceptions');
+    exceptions = require('./SupportedExceptions');
 
 // create a list of regular expressions to match against.
 // note: list created when the server starts up; for performance reasons.

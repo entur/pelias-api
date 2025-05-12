@@ -104,7 +104,7 @@ const Interpolation = require('../service/configurations/Interpolation');
  * @param {object} peliasConfig
  */
 function addRoutes(app, peliasConfig) {
-  const esclient = elasticsearch.Client(Object.assign({}, peliasConfig.esclient, { apiVersion: '5.6' }));
+  const esclient = elasticsearch.Client(Object.assign({}, peliasConfig.esclient, { apiVersion: '7.6' }));
 
   const pipConfiguration = new PointInPolygon(_.defaultTo(peliasConfig.api.services.pip, {}));
   const pipService = serviceWrapper(pipConfiguration);

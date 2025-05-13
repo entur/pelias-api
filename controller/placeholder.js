@@ -110,7 +110,7 @@ function getBoundaryRectangleFilter(clean, do_geometric_filters_apply) {
       { latitude: clean['boundary.rect.min_lat'], longitude: clean['boundary.rect.max_lon'] }
     ];
     // isPointInside takes polygon last, so create a function that has it pre-populated
-    const isPointInsidePolygon = _.partialRight(geolib.isPointInside, polygon);
+    const isPointInsidePolygon = _.partialRight(geolib.isPointInPolygon, polygon);
 
     return _.partial(isInsideGeometry, isPointInsidePolygon);
 
@@ -134,7 +134,7 @@ function getBoundaryCircleFilter(clean, do_geometric_filters_apply) {
     const radiusInMeters = clean['boundary.circle.radius'] * 1000;
 
     // isPointInCircle takes circle/radius last, so create a function that has them pre-populated
-    const isPointInCircle = _.partialRight(geolib.isPointInCircle, center, radiusInMeters);
+    const isPointInCircle = _.partialRight(geolib.isPointWithinRadius, center, radiusInMeters);
 
     return _.partial(isInsideGeometry, isPointInCircle);
 

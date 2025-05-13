@@ -1,6 +1,5 @@
 const _ = require('lodash');
 const proxyquire =  require('proxyquire').noCallThru();
-
 module.exports.tests = {};
 
 module.exports.tests.text_parser = function(test, common) {
@@ -264,7 +263,12 @@ module.exports.tests.text_parser = function(test, common) {
   });
 
   test('return an array of expected parameters in object form for validation', function (t) {
-    const sanitizer = require('../../../sanitizer/_synthesize_analysis');
+    var sanitizer = proxyquire('../../../sanitizer/_synthesize_analysis', {
+      'pelias-text-analyzer': { parse: function(query) {
+          return undefined;
+        }
+      }});
+
     const expected = [
       { 'name': 'venue' },
       { 'name': 'address' },

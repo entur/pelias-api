@@ -54,7 +54,7 @@
     "morgan": "1.10.1",
     "pelias-categories": "1.4.0",
     "pelias-config": "3.11.0",
-    "pelias-labels": "1.20.0",
+    "pelias-labels": "1.21.0",
     "pelias-logger": "1.6.0",
     "pelias-microservice-wrapper": "1.10.0",
     "pelias-model": "5.13.0",

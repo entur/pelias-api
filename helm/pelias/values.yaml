@@ -27,7 +27,7 @@ secondaryImage:
     cpuRequest: 1200m
     memRequest: 1500Mi
 nibiruImage:
-  identifier: eu.gcr.io/entur-system-1287/nibiru:master.20250925-SHA478c7dc
+  identifier: eu.gcr.io/entur-system-1287/nibiru:master.20250926-SHA698315b
   imagePullPolicy: Always
   containerPort: 4000
   healthPort: 9001

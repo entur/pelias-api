@@ -33,7 +33,7 @@
     "url": "https://github.com/pelias/api/issues"
   },
   "engines": {
-    "node": "22.21.1"
+    "node": "22.22.0"
   },
   "dependencies": {
     "@godaddy/terminus": "4.12.1",
